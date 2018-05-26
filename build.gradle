@@ -1,0 +1,35 @@
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.2'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.0'
+        classpath 'digital.wup:android-maven-publish:3.3.0'
+    }
+}
+
+subprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+
+    group 'com.sch.stetho'
+    version '1.0.0'
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    compileSdkVersion = 27
+    minSdkVersion = 14
+    targetSdkVersion = 27
+
+    stethoVersion = '1.5.0'
+    timberVersion = '4.7.0'
+    annotationsVersion = '16.0.2'
+}
